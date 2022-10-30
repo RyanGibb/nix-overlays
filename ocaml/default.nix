@@ -893,8 +893,8 @@ with oself;
   });
 
   mirage-bootvar-solo5 = callPackage ./mirage-bootvar-solo5/default.nix { };
-  mirage-clock-solo5 = osuper.mirage-clock-solo5 { };
-  mirage-solo5 = osuper.mirage-solo5 { };
+  mirage-clock-solo5 = callPackage ./mirage-clock-solo5/default.nix { };
+  mirage-solo5 = callPackage ./mirage-solo5/default.nix { };
 
   mirage-crypto = osuper.mirage-crypto.overrideAttrs (o: {
     src = builtins.fetchurl {

@@ -36,9 +36,9 @@ with oself;
   lwt_eio = callPackage ./eio/lwt_eio.nix { };
 
   mirage-bootvar-solo5 = callPackage ./mirage-bootvar-solo5/default.nix { };
-  mirage-clock-solo5 = osuper.mirage-clock-solo5 { };
-  mirage-solo5 = osuper.mirage-solo5 { };
-
+  mirage-clock-solo5 = callPackage ./mirage-clock-solo5/default.nix { };
+  mirage-solo5 = callPackage ./mirage-solo5/default.nix { };
+  
   mirage-crypto-rng-eio = buildDunePackage {
     pname = "mirage-crypto-rng-eio";
     inherit (mirage-crypto) src version;
