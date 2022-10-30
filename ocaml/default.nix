@@ -892,6 +892,10 @@ with oself;
     };
   });
 
+  mirage-bootvar-solo5 = callPackage ./mirage-bootvar-solo5/default.nix { };
+  mirage-clock-solo5 = osuper.mirage-clock-solo5 { };
+  mirage-solo5 = osuper.mirage-solo5 { };
+
   mirage-crypto = osuper.mirage-crypto.overrideAttrs (o: {
     src = builtins.fetchurl {
       url = https://github.com/mirage/mirage-crypto/releases/download/v0.10.7/mirage-crypto-0.10.7.tbz;

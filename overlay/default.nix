@@ -40,6 +40,8 @@ in
     super.pkgsCross // {
       musl64 = super.pkgsCross.musl64.extend static-overlay;
 
+      solo5 =  super.pkgsCross.aarch64-multiplatform.extend cross-overlay;
+
       aarch64-multiplatform =
         super.pkgsCross.aarch64-multiplatform.extend cross-overlay;
 
